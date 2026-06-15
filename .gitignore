@@ -6,5 +6,6 @@
 *.ilk
 6.15-test
 output/
+.memory/
 .vscode/
 .idea/
