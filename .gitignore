@@ -1,0 +1,9 @@
+*.exe
+*.out
+*.obj
+*.o
+*.pdb
+*.ilk
+6.15-test
+.vscode/
+.idea/
