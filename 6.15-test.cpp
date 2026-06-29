@@ -46,6 +46,21 @@ using namespace std;
     
 // }
 
+// //插入排序
+// void insertionSort(vector<int> & array) {
+//     for (int i=1;i<array.size();i++) {
+//         int key=array[i];
+//         int j=i-1;
+
+//         while(j>=0 && array[j]>key) {
+//             array[j+1] = array[j];
+//             j--;
+//         }
+//         array[j+1] =key;
+//     }
+
+ 
+// }
 
 int main () {
 
@@ -57,7 +72,7 @@ int main () {
     array2.push_back(398);
     array2.push_back(234);
 
-  
+   
     for (int i = 0; i < array2.size(); i++) {
     cout << array2[i] << endl;
     }
