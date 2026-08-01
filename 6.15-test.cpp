@@ -62,6 +62,60 @@ using namespace std;
  
 // }
 
+//归并排序
+void merge(vector<int>& array, int left, int mid, int right) {
+    vector<int> temp;
+
+    int i = left;      // 指向左边区间的开头
+    int j = mid + 1;   // 指向右边区间的开头
+
+    // 左右两边都还有元素时，谁小就先放进 temp
+    while (i <= mid && j <= right) {
+        if (array[i] <= array[j]) {
+            temp.push_back(array[i]);
+            i++;
+        } else {
+            temp.push_back(array[j]);
+            j++;
+        }
+    }
+
+    // 如果左边还有剩余元素，全部放进 temp
+    while (i <= mid) {
+        temp.push_back(array[i]);
+        i++;
+    }
+
+    // 如果右边还有剩余元素，全部放进 temp
+    while (j <= right) {
+        temp.push_back(array[j]);
+        j++;
+    }
+
+    // 把排好序的 temp 放回原数组对应位置
+    for (int k = 0; k < temp.size(); k++) {
+        array[left + k] = temp[k];
+    }
+}
+
+// 归并排序：排序 array[left] 到 array[right] 这一段
+void mergeSort(vector<int>& array, int left, int right) {
+    // 如果这一段只有 0 个或 1 个元素，就不用排序
+    if (left >= right) {
+        return;
+    }
+
+    int mid = (left + right) / 2;
+
+    // 排左半边
+    mergeSort(array, left, mid);
+
+    // 排右半边
+    mergeSort(array, mid + 1, right);
+
+    // 把两个已经有序的半边合并
+    merge(array, left, mid, right);
+}
 int main () {
 
     vector<int>array2;
