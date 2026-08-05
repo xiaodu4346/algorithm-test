@@ -7,5 +7,6 @@
 6.15-test
 output/
 .memory/
+.tools/
 .vscode/
 .idea/
