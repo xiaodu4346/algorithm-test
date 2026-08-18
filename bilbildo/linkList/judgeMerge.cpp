@@ -46,11 +46,11 @@ bool judgeMerge(Node* head, Node* head2, int val) {
     Node* p = head->next;
     Node* q = head2->next;
     int a = 0, b = 0;
-    while (p->next != nullptr) {
+    while (p!= nullptr) {
         a++;
         p = p->next;
     };
-    while (q->next != nullptr) {
+    while (q!= nullptr) {
         b++;
         q = q->next;
     };
